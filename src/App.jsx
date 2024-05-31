@@ -11,8 +11,8 @@ import Download from "./components/Download/Download";
 function App() {
   useEffect(() => {
     const currentPath = window.location.pathname;
-    if (currentPath !== "/portfolio/") {
-      window.location.href = "/portfolio/";
+    if (currentPath !== "/DxWeb/") {
+      window.location.href = "/DxWeb/";
     }
   }, []);
 
@@ -20,10 +20,10 @@ function App() {
     <div>
       <Navbar />
       <Routes>
-        <Route path="/portfolio/" element={<Home />} />
-        <Route path="/portfolio/Team" element={<Team />} />
-        <Route path="/portfolio/Blog" element={<Blog />} />
-        <Route path="/portfolio/Download" element={<Download />} />
+        <Route path="/DxWeb/" element={<Home />} />
+        <Route path="/DxWeb/Team" element={<Team />} />
+        <Route path="/DxWeb/Blog" element={<Blog />} />
+        <Route path="/DxWeb/Download" element={<Download />} />
       </Routes>
       <Footer />
     </div>

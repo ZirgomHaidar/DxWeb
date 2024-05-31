@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <Link to="/portfolio/">
+      <Link to="/DxWeb/">
         <img src={logo} alt="DX-UI" />
       </Link>
 
@@ -18,19 +18,19 @@ const Navbar = () => {
             onClick={() => setMenu("home")}
             className={menu === "home" ? "active" : ""}
           >
-            <Link to="/portfolio/">Home</Link>
+            <Link to="/DxWeb/">Home</Link>
           </li>
           <li
             onClick={() => setMenu("blog")}
             className={menu === "blog" ? "active" : ""}
           >
-            <Link to="/portfolio/Blog">Blog</Link>
+            <Link to="/DxWeb/Blog">Blog</Link>
           </li>
           <li
             onClick={() => setMenu("team")}
             className={menu === "team" ? "active" : ""}
           >
-            <Link to="/portfolio/Team">Team</Link>
+            <Link to="/DxWeb/Team">Team</Link>
           </li>
           <li
             onClick={() => setMenu("more")}
@@ -44,7 +44,7 @@ const Navbar = () => {
           onClick={() => setMenu("Download")}
           className={menu === "Download" ? "active nav-tryDx" : "nav-tryDx"}
         >
-          <Link to="/portfolio/Download">Try Droidx-UI</Link>
+          <Link to="/DxWeb/Download">Try Droidx-UI</Link>
         </div>
       </div>
     </div>
