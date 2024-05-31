@@ -1,0 +1,115 @@
+.dn-container {
+  display: flex;
+  margin-top: 50px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.dn-container input {
+  padding: 25px;
+  width: 50%;
+  outline: none;
+  margin: 50px;
+  font-size: 20px;
+  color: whitesmoke;
+  background-color: #414a4f;
+  border-radius: 50px;
+  border: 2px solid transparent;
+}
+
+.select-vendor {
+  display: flex;
+  gap: 5px;
+}
+
+.nav-tryDx.vendor-category {
+  background: linear-gradient(90deg, #3282b850 100%, #8797a250 0%);
+  border: 3px solid #72a7c4;
+  -webkit-background-clip: border-box;
+  -webkit-text-fill-color: #ffffff;
+}
+
+.db-card {
+  display: flex;
+  padding: 40px;
+  padding-bottom: 25px;
+  margin: 50px;
+  gap: 10px;
+  margin-bottom: 25px;
+  margin-top: 50px;
+  background-color: #162025;
+  border: 1px solid #414a4f;
+  border-radius: 42px;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: 0.3s;
+}
+
+.db-card span {
+  color: #81c1cf;
+}
+
+.db-card .active {
+  color: #c5f982;
+}
+
+.db-card .discontinued {
+  color: #fd8179;
+}
+
+.vendor {
+  font-size: 20px;
+}
+
+.model {
+  font-size: 35px;
+}
+
+.maintainer,
+.version,
+.status {
+  font-size: 20px;
+}
+
+.codename {
+  font-size: 20px;
+  margin-top: 50px;
+  width: fit-content;
+  border-radius: 10px;
+  background-color: #17557f;
+  padding: 5px;
+}
+
+.db-card:hover {
+  transform: scale(1.02);
+  transition: 0.3s;
+}
+
+.dn-ch a {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.get-build,
+.changelog {
+  border-radius: 90px;
+  display: flex;
+  justify-content: center;
+  background-color: aliceblue;
+  padding: 10px;
+  color: #162025;
+}
+
+.changelog {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.get-build:hover {
+  transform: scale(1.05);
+  background-color: #adb8f0;
+  color: #162025;
+  transition: 0.3s;
+}

@@ -50,7 +50,7 @@ const Navbar = () => {
           onClick={() => setMenu("Download")}
           className={menu === "Download" ? "active nav-tryDx" : "nav-tryDx"}
         >
-          {/* <Link to="/Download">Try Droidx-UI</Link> */}Try Droidx-UI
+          <Link to="/portfolio/Download">Try Droidx-UI</Link>
         </div>
       </div>
     </div>
