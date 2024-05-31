@@ -1,0 +1,43 @@
+.footer {
+  background-color: #080808;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 500px;
+}
+
+.middle {
+  display: flex;
+  flex-direction: row;
+  gap: 200px;
+}
+
+.middle h2 {
+  padding-bottom: 30px;
+}
+
+.middle h5 {
+  padding-bottom: 15px;
+}
+
+.bottom {
+  position: relative;
+  top: 30%;
+}
+
+.bottom p {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.bottom img {
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.bottom img:hover {
+  transform: scale(1.2);
+  transition: 0.3s;
+}
