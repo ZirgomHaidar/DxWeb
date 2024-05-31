@@ -8,7 +8,7 @@ import img2 from "../../assets/glimpse2.png";
 import img3 from "../../assets/glimpse3.png";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const TopHome = () => {
   return (
     <div className="header">
       <div className="dx-reach-out">
@@ -54,4 +54,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default TopHome;
