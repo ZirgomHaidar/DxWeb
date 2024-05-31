@@ -8,10 +8,9 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      {/* <Link to="/">
+      <Link to="/portfolio/">
         <img src={logo} alt="DX-UI" />
-      </Link> */}
-      <img src={logo} alt="" />
+      </Link>
 
       <div className="nav-right">
         <ul className="nav-menu">
@@ -19,7 +18,7 @@ const Navbar = () => {
             onClick={() => setMenu("home")}
             className={menu === "home" ? "active" : ""}
           >
-            {/* <Link to="/">Home</Link> */}Home
+            <Link to="/portfolio/">Home</Link>
           </li>
           <li
             onClick={() => setMenu("blog")}
