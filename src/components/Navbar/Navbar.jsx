@@ -24,7 +24,7 @@ const Navbar = () => {
             onClick={() => setMenu("blog")}
             className={menu === "blog" ? "active" : ""}
           >
-            {/* <Link to="/Blog">Blog</Link> */}Blog
+            <Link to="/portfolio/Blog">Blog</Link>
           </li>
           <li
             onClick={() => setMenu("team")}
