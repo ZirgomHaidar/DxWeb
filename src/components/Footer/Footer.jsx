@@ -30,7 +30,7 @@ const Footer = () => {
         <div className="bottom">
           <p>
             Made with <img src={heart} alt="heart where bro ?" />
-            by Zirgom Haidar
+            by Zirgom Haidar & Kshitij Bhale
           </p>
         </div>
       </div>
