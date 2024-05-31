@@ -30,7 +30,7 @@ const Navbar = () => {
             onClick={() => setMenu("team")}
             className={menu === "team" ? "active" : ""}
           >
-            {/* <Link to="/Team">Team</Link> */}Team
+            <Link to="/portfolio/Team">Team</Link>
           </li>
           <li
             onClick={() => setMenu("contact")}
