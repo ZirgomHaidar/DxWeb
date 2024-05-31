@@ -33,12 +33,6 @@ const Navbar = () => {
             <Link to="/portfolio/Team">Team</Link>
           </li>
           <li
-            onClick={() => setMenu("contact")}
-            className={menu === "contact" ? "active" : ""}
-          >
-            {/* <Link to="/Contact">Contact</Link> */}Contact
-          </li>
-          <li
             onClick={() => setMenu("more")}
             className={menu === "more" ? "active" : ""}
           >
