@@ -1,5 +1,5 @@
 import React from "react";
-import "./Header.css";
+import "./TopHome.css";
 import logo_discord from "../../assets/ic_discord.svg";
 import logo_tg from "../../assets/ic_telegram.svg";
 import logo_X from "../../assets/ic_X.svg";
