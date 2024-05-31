@@ -17,7 +17,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <>
       <Navbar />
       <Routes>
         <Route path="/DxWeb/" element={<Home />} />
@@ -26,7 +26,7 @@ function App() {
         <Route path="/DxWeb/Download" element={<Download />} />
       </Routes>
       <Footer />
-    </div>
+    </>
   );
 }
 

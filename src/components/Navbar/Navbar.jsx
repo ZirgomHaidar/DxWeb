@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import logo from "../../assets/dxlogo_2.svg";
 import { Link } from "react-router-dom";
+import ShowMore from "../ShowMore/ShowMore";
 
 const Navbar = () => {
   const [menu, setMenu] = useState("home");
@@ -32,11 +33,8 @@ const Navbar = () => {
           >
             <Link to="/DxWeb/Team">Team</Link>
           </li>
-          <li
-            onClick={() => setMenu("more")}
-            className={menu === "more" ? "active" : ""}
-          >
-            {/* <Link to="/More">More</Link> */}More
+          <li className={menu === "more" ? "active" : ""}>
+            <ShowMore />
           </li>
         </ul>
         <hr />
