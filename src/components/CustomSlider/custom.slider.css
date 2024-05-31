@@ -22,7 +22,7 @@ button {
   background-color: transparent;
   outline: none;
   border: 0;
-  transition: 0.3s;
+  transition: 0.1s;
 }
 
 .slider__btn-next img {
@@ -35,7 +35,7 @@ button {
 
 button:active {
   transform: scale(1.15);
-  transition: 0.3s;
+  transition: 0.1s;
 }
 
 .container__slider__links {

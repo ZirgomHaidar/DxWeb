@@ -34,12 +34,12 @@ a {
   text-decoration: none;
   color: #3e99ca;
   background-clip: text;
-  transition: 0.3s;
+  transition: 0.1s;
 }
 
 .active:hover {
   transform: scale(1.05);
-  transition: 0.3s;
+  transition: 0.1s;
 }
 
 .nav-tryDx {

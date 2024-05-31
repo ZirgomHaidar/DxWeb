@@ -3,7 +3,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #1f2f3a;
+  background-color: #1b262c;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,8 +14,9 @@
 * {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
-body {
-  overflow-x: hidden; /* Hide horizontal scrollbar */
+body::-webkit-scrollbar {
+  display: none;
 }
