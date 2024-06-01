@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
@@ -21,13 +21,15 @@ function App() {
   return (
     <>
       <Navbar />
-      <Routes>
-        <Route path="/DxWeb/" element={<Home />} />
-        <Route path="/DxWeb/Team" element={<Team />} />
-        <Route path="/DxWeb/Blog" element={<Blog />} />
-        <Route path="/DxWeb/Download" element={<Download />} />
-        <Route path="/DxWeb/About" element={<About />} />
-      </Routes>
+      <Suspense fallback={<div className="container">Loading...</div>}>
+        <Routes>
+          <Route path="/DxWeb/" element={<Home />} />
+          <Route path="/DxWeb/Team" element={<Team />} />
+          <Route path="/DxWeb/Blog" element={<Blog />} />
+          <Route path="/DxWeb/Download" element={<Download />} />
+          <Route path="/DxWeb/About" element={<About />} />
+        </Routes>
+      </Suspense>
       <StuckedSomewhere />
       <Footer />
     </>
