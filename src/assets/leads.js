@@ -9,6 +9,7 @@ import jeevesh from "./jeevesh.jpg";
 import hisenberg from "./hisenberg.jpg";
 import twix from "./twix.jpg";
 import revetx from "./revetx.jpg";
+import prajjus from "./prajjus.jpg";
 
 export const leads = [
   {
@@ -86,6 +87,13 @@ export const leads = [
     pfp: revetx,
     role: "Maintainer Relationship",
     tg_link: "https://t.me/ReveRTX",
+    donate_link: "",
+  },
+  {
+    name: "Prajju S",
+    pfp: prajjus,
+    role: "Bot Programmer",
+    tg_link: "https://t.me/PrajjuS",
     donate_link: "",
   },
 ];
