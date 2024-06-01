@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Team from "./components/Team/Team";
 import Blog from "./components/Blog/Blog";
 import Download from "./components/Download/Download";
+import StuckedSomewhere from "./components/StuckedSomewhere/StuckedSomewhere";
 
 function App() {
   useEffect(() => {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/DxWeb/Blog" element={<Blog />} />
         <Route path="/DxWeb/Download" element={<Download />} />
       </Routes>
+      <StuckedSomewhere />
       <Footer />
     </>
   );

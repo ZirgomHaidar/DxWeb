@@ -1,0 +1,46 @@
+.CU-container {
+  color: #000;
+  position: fixed;
+  right: 30px;
+  bottom: 110px;
+  border-radius: 21px;
+  background-color: #92cde0;
+  width: 400px;
+  height: 500px;
+  padding: 40px 40px 0px 40px;
+}
+
+.instructions h3 {
+  font-size: 28px;
+  font-family: "Product Sans Bold";
+}
+
+.instructions ol {
+  padding: 30px;
+}
+
+.instructions li {
+  font-size: 23px;
+  line-height: 35px;
+}
+
+.reach-platform {
+  border-radius: 30px;
+  background-color: #75b3c8;
+  padding: 10px 10px;
+}
+
+.reach-platform a {
+  text-decoration: none;
+  color: #000;
+}
+
+.reach-platform ul {
+  display: flex;
+  font-size: 20px;
+  flex-direction: row;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
