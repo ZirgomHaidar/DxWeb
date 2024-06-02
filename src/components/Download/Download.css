@@ -27,6 +27,7 @@
   background: linear-gradient(90deg, #3282b850 100%, #8797a250 0%);
   border: 3px solid #72a7c4;
   -webkit-background-clip: border-box;
+  background-clip: border-box;
   -webkit-text-fill-color: #ffffff;
 }
 
@@ -79,11 +80,6 @@
   border-radius: 10px;
   background-color: #17557f;
   padding: 5px;
-}
-
-.db-card:hover {
-  transform: scale(1.02);
-  transition: 0.3s;
 }
 
 .dn-ch a {

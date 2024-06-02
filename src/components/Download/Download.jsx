@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./Download.css";
 import device_list from "../../assets/devices.json";
+import { Link } from "react-router-dom";
 
 const Download = () => {
   //   const [category, setCategory] = useState("All");
+  const datas = { device_list };
   return (
     <div className="dn-container">
       <p className="heading">Download DroidX-UI</p>
@@ -47,14 +49,24 @@ const Download = () => {
                 </span>
               </p>
               <div className="dn-ch">
-                <a
+                <Link
                   className="get-build"
-                  href={device.Links[0].Gapps}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  to="/DxWeb/DevicePage"
+                  state={{
+                    model: device.model,
+                    status: device.status,
+                    version: device.version,
+                    maintainer_name: device.maintainer_name,
+                    codename: device.codename,
+                    latest_release_date: device.last_updated,
+                    vendor: device.vendor,
+                    dev_chlg: device.device_cglg,
+                    maintainer_git: device.gitProfile,
+                  }}
                 >
                   Get Build
-                </a>
+                </Link>
+                {/* href={device.Links[0].Gapps} */}
                 <a
                   className="changelog"
                   href={device.device_cglg}

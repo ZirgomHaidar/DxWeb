@@ -10,6 +10,7 @@ import Download from "./components/Download/Download";
 import StuckedSomewhere from "./components/StuckedSomewhere/StuckedSomewhere";
 import About from "./components/About/About";
 import Help from "./components/Help/Help";
+import DevicePage from "./components/DevicePage/DevicePage";
 
 function App() {
   useEffect(() => {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/DxWeb/Download" element={<Download />} />
           <Route path="/DxWeb/About" element={<About />} />
           <Route path="/DxWeb/Help" element={<Help />} />
+          <Route path="/DxWeb/DevicePage" element={<DevicePage />} />
         </Routes>
       </Suspense>
       <StuckedSomewhere />
