@@ -38,12 +38,14 @@ const Navbar = () => {
           </li>
         </ul>
         <hr />
-        <div
-          onClick={() => setMenu("Download")}
-          className={menu === "Download" ? "active nav-tryDx" : "nav-tryDx"}
-        >
-          <Link to="/DxWeb/Download">Try Droidx-UI</Link>
-        </div>
+        <Link to="/DxWeb/Download">
+          <div
+            onClick={() => setMenu("Download")}
+            className={menu === "Download" ? "active nav-tryDx" : "nav-tryDx"}
+          >
+            <h4>Try Droidx-UI</h4>
+          </div>
+        </Link>
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ import Blog from "./components/Blog/Blog";
 import Download from "./components/Download/Download";
 import StuckedSomewhere from "./components/StuckedSomewhere/StuckedSomewhere";
 import About from "./components/About/About";
+import Help from "./components/Help/Help";
 
 function App() {
   useEffect(() => {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/DxWeb/Blog" element={<Blog />} />
           <Route path="/DxWeb/Download" element={<Download />} />
           <Route path="/DxWeb/About" element={<About />} />
+          <Route path="/DxWeb/Help" element={<Help />} />
         </Routes>
       </Suspense>
       <StuckedSomewhere />

@@ -10,7 +10,7 @@ const ShowMore = () => {
         <Link to="/DxWeb/About">About</Link>
         <a href="#home">Wallpaper</a>
         <a href="#home">Changelog</a>
-        <a href="#home">Help</a>
+        <Link to="/DxWeb/Help">Help</Link>
       </div>
     </div>
   );
