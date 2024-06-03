@@ -8,7 +8,7 @@ const Download = () => {
   const datas = { device_list };
   return (
     <div className="dn-container">
-      <p className="heading">Download DroidX-UI</p>
+      <p className="heading-dn">Download DroidX-UI</p>
       <input
         type="search"
         name="searchQuery"

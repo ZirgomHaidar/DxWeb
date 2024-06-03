@@ -5,7 +5,7 @@ import leadpic from "../../assets/ashwini.jpg";
 const Blog = () => {
   return (
     <div className="blog-container">
-      <p className="heading">DroidX-UI blog</p>
+      <p className="heading-blog">DroidX-UI blog</p>
       <div className="db-card">
         <p>March 26, 2024 1 min read</p>
         <div className="made-by">

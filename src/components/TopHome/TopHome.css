@@ -10,6 +10,12 @@
   gap: 77px;
 }
 
+.dx-reach-out a img:first-child {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+
 .dx-middle-desc {
   display: flex;
   margin: -35px 90px;
@@ -18,7 +24,7 @@
 
 .dx-middle-desc p {
   font-size: 75px;
-  font-weight: 700;
+  font-family: "Product Sans Bold";
 }
 
 .header .nav-tryDx {

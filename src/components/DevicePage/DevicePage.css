@@ -74,6 +74,10 @@
   font-size: 50px;
 }
 
+.db-card.right-bottom {
+  background-color: #1b262c;
+}
+
 .dp-bottom {
   display: flex;
   flex-direction: row;

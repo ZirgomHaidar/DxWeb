@@ -8,6 +8,7 @@
   width: 400px;
   height: 500px;
   padding: 40px 40px 0px 40px;
+  z-index: 5;
 }
 
 .instructions h3 {

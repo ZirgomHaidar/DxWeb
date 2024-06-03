@@ -62,7 +62,7 @@ const About = () => {
             Leaders and Maintainers
           </h1>
           <p>
-            view all members{" "}
+            view all members
             <Link to="/DxWeb/Team">
               <img src={Arrow} alt="" />
             </Link>

@@ -1,6 +1,6 @@
 import React from "react";
 import "./TopHome.css";
-import logo_discord from "../../assets/ic_discord.svg";
+import logo_gh from "../../assets/reach_gh.svg";
 import logo_tg from "../../assets/ic_telegram.svg";
 import logo_X from "../../assets/ic_X.svg";
 import img1 from "../../assets/glimpse1.png";
@@ -12,9 +12,27 @@ const TopHome = () => {
   return (
     <div className="header">
       <div className="dx-reach-out">
-        <img src={logo_discord} alt="Discord" />
-        <img src={logo_tg} alt="TG" />
-        <img src={logo_X} alt="X" />
+        <a
+          href="https://github.com/DroidX-UI"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={logo_gh} alt="Github" />
+        </a>
+        <a
+          href="https://t.me/DroidXUI_chats"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={logo_tg} alt="TG" />
+        </a>
+        <a
+          href="https://twitter.com/DroidX_UI"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={logo_X} alt="X" />
+        </a>
       </div>
       <div className="dx-middle-desc">
         <p>
@@ -24,8 +42,7 @@ const TopHome = () => {
           <span>DroidX-UI</span>
         </p>
         <div className="nav-tryDx">
-          Try Droidx-UI
-          {/* <Link to="/Download">Try Droidx-UI</Link> */}
+          <Link to="/DxWeb/Download">Try Droidx-UI</Link>
         </div>
         <div className="dx-support-nums">
           <p>

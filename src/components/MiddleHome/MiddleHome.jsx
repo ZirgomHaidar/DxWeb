@@ -1,6 +1,7 @@
 import React from "react";
 import "./MiddleHome.css";
 import { features } from "../../assets/features";
+import { Link } from "react-router-dom";
 
 const MiddleHome = () => {
   const item1 = features[0];
@@ -40,7 +41,9 @@ const MiddleHome = () => {
               <h1>{item5.name}</h1>
               <p>{item5.desc}</p>
             </div>
-            <div className="nav-tryDx">Droidx-UI</div>
+            <div className="nav-tryDx">
+              <Link to="/DxWeb/Download">Try Droidx-UI</Link>
+            </div>
           </div>
         </div>
       </div>

@@ -126,7 +126,7 @@
   position: relative;
   right: 0;
   display: flex;
-  gap: 40%;
+  justify-content: space-between;
   align-items: center;
   padding: 40px 0px;
 }

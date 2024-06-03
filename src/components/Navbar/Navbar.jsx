@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <Link to="/DxWeb/">
-        <img src={logo} alt="DX-UI" />
+        <img src={logo} alt="DX-UI" onClick={() => setMenu("home")} />
       </Link>
 
       <div className="nav-right">

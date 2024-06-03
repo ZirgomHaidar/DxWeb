@@ -7,18 +7,18 @@
 }
 
 .feature-list h1 {
-  font-weight: 700;
+  font-family: "Product Sans Bold";
   font-size: 40px;
 }
 
 .feature-list p {
-  font-weight: 300;
+  font-family: "Product Sans Light Regular";
   padding-top: 10px;
   font-size: 23px;
 }
 
 .feature-layout {
-  background-color: #223644;
+  background-color: #1f2f3a;
   border-radius: 11px;
   padding: 50px;
   margin: 10px;

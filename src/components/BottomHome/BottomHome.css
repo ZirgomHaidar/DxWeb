@@ -7,7 +7,9 @@
 
 .heading h1 {
   font-size: 80px;
+  font-family: "Product Sans Bold";
 }
+
 .container-ss {
   margin-top: 0;
   margin-left: 15%;

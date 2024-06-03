@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import right_arrow from "../../assets/right-arrow.svg";
 import left_arrow from "../../assets/left-arrow.svg";
 
@@ -9,17 +9,36 @@ function CustomCarousel({ children }) {
   const [slideDone, setSlideDone] = useState(true);
   const [timeID, setTimeID] = useState(null);
 
+  const elementRef = useRef(null);
+  const isVisible = divIsVisible(elementRef);
+
   useEffect(() => {
-    if (slideDone) {
+    if (slideDone && isVisible) {
       setSlideDone(false);
       setTimeID(
         setTimeout(() => {
           slideNext();
           setSlideDone(true);
-        }, 5000)
+        }, 4000)
       );
     }
-  }, [slideDone]);
+  }, [slideDone, isVisible]);
+
+  function divIsVisible(ref) {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      });
+
+      observer.observe(ref.current);
+
+      return () => observer.disconnect();
+    }, [ref]);
+
+    return isVisible;
+  }
 
   const slideNext = () => {
     setActiveIndex((val) => {
@@ -68,11 +87,12 @@ function CustomCarousel({ children }) {
         <img className="arrow-left" src={left_arrow}></img>
       </button>
 
-      <div className="bruh">
+      <div className="myslider">
         <div
           className="container__slider"
           onMouseEnter={AutoPlayStop}
           onMouseLeave={AutoPlayStart}
+          ref={elementRef}
         >
           {children.map((item, index) => {
             return (

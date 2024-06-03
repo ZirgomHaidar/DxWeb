@@ -20,3 +20,57 @@
 body::-webkit-scrollbar {
   display: none;
 }
+
+/* added the below line cause some elements were using the same css property */
+/* lazy loading doesnt load the css soo it weird */
+
+.db-card {
+  display: flex;
+  padding: 40px;
+  padding-bottom: 25px;
+  margin: 50px;
+  gap: 10px;
+  margin-bottom: 25px;
+  margin-top: 50px;
+  background-color: #162025;
+  border: 1px solid #414a4f;
+  border-radius: 42px;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: 0.3s;
+}
+
+.gridplease {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 30px;
+  padding: 0;
+}
+
+.top-help {
+  background-color: #fc6363;
+  color: black;
+  padding: 30px 70px;
+  border-radius: 42px;
+  margin-bottom: 20px;
+}
+
+.reachout {
+  display: flex;
+  margin-top: 10px;
+  gap: 10px;
+  align-items: center;
+}
+
+.Collapsible {
+  background-color: #414a4f;
+  border-radius: 30px;
+  padding: 30px;
+  font-family: "Product Sans Bold";
+  font-size: 20px;
+}
+
+.Collapsible__contentInner {
+  font-family: "Product Sans Light Regular";
+  padding-top: 20px;
+}
