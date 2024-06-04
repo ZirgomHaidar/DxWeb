@@ -4,10 +4,16 @@ import team_work from "../../assets/peeps_working.png";
 import Arrow from "../../assets/Arrow.svg";
 import { leads } from "../../assets/leads";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div className="about-container">
+    <motion.div
+      className="about-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       <div className="about-top">
         <div className="top-left">
           <p>How it started</p>
@@ -102,7 +108,7 @@ const About = () => {
           </h4>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

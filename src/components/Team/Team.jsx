@@ -2,10 +2,16 @@ import React from "react";
 import "./Team.css";
 import { leads } from "../../assets/leads";
 import reach_tg from "../../assets/reachtg.svg";
+import { motion } from "framer-motion";
 
 const Team = () => {
   return (
-    <div className="teams">
+    <motion.div
+      className="teams"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       <p className="first-header">
         These are the people who play an important role in maintaining
         <span> DROID-X UI </span>source from day to day work to monthly updates
@@ -42,7 +48,7 @@ const Team = () => {
           })}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

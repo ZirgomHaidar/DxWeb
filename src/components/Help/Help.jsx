@@ -1,10 +1,16 @@
 import React from "react";
 import "./Help.css";
 import Collapsible from "react-collapsible";
+import { motion } from "framer-motion";
 
 const Help = () => {
   return (
-    <div className="help-container">
+    <motion.div
+      className="help-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       <div className="top-help">
         <p>
           DroidX-UI does not guarantee that your device will run flawlessly
@@ -91,7 +97,7 @@ const Help = () => {
           </Collapsible>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

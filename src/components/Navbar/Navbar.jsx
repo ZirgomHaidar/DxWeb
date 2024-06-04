@@ -3,12 +3,18 @@ import "./Navbar.css";
 import logo from "../../assets/dxlogo_2.svg";
 import { Link } from "react-router-dom";
 import ShowMore from "../ShowMore/ShowMore";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [menu, setMenu] = useState("home");
 
   return (
-    <div className="navbar">
+    <motion.div
+      className="navbar"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       <Link to="/DxWeb/">
         <img src={logo} alt="DX-UI" onClick={() => setMenu("home")} />
       </Link>
@@ -47,7 +53,7 @@ const Navbar = () => {
           </div>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

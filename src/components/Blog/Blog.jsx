@@ -1,10 +1,16 @@
 import React from "react";
 import "./Blog.css";
 import leadpic from "../../assets/ashwini.jpg";
+import { motion } from "framer-motion";
 
 const Blog = () => {
   return (
-    <div className="blog-container">
+    <motion.div
+      className="blog-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       <p className="heading-blog">DroidX-UI blog</p>
       <div className="db-card">
         <p>March 26, 2024 1 min read</p>
@@ -24,7 +30,7 @@ const Blog = () => {
           April patch comes. Till then stay tuned.
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

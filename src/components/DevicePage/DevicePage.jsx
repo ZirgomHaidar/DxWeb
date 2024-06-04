@@ -7,6 +7,7 @@ import reach_gh from "../../assets/reach_gh.svg";
 import arrow2 from "../../assets/Arrow_2.svg";
 import arrow_black from "../../assets/Arrow_2_black.svg";
 import caution from "../../assets/caution.svg";
+import { motion } from "framer-motion";
 
 function DevicePage(props) {
   const location = useLocation();
@@ -22,7 +23,12 @@ function DevicePage(props) {
     maintainer_git,
   } = location.state;
   return (
-    <div className="dp-container">
+    <motion.div
+      className="dp-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       <div className="db-card dp-top">
         <div className="dp-top-left">
           <div className="pairs">
@@ -151,7 +157,7 @@ function DevicePage(props) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

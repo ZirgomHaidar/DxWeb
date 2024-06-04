@@ -2,12 +2,18 @@ import React, { useState } from "react";
 import "./Download.css";
 import device_list from "../../assets/devices.json";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Download = () => {
   //   const [category, setCategory] = useState("All");
   const datas = { device_list };
   return (
-    <div className="dn-container">
+    <motion.div
+      className="dn-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       <p className="heading-dn">Download DroidX-UI</p>
       <input
         type="search"
@@ -80,7 +86,7 @@ const Download = () => {
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

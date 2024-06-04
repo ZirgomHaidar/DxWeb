@@ -1,9 +1,15 @@
 import "./ContactUs.css";
 import React from "react";
+import { motion } from "framer-motion";
 
 const ContactUs = () => {
   return (
-    <div className="CU-container">
+    <motion.div
+      className="CU-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.2 }}
+    >
       <div className="instructions">
         <h3>
           If you are here then you are probably fukd up. But it's fixable.
@@ -49,7 +55,7 @@ const ContactUs = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
