@@ -27,7 +27,6 @@ const StuckedSomewhere = () => {
       <div
         className="stuck-Container"
         onClick={() => setShowCU(showCU !== true)}
-        onMouseEnter={() => setShowCU(true)}
         ref={divRef}
       >
         <div className="inside-container">

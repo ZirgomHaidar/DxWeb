@@ -18,10 +18,6 @@
   border: 2px solid transparent;
 } */
 
-.gridplease .db-card {
-  min-width: 70%;
-}
-
 .select-vendor {
   display: flex;
   gap: 5px;
@@ -87,6 +83,7 @@
 .changelog {
   border-radius: 90px;
   display: flex;
+  min-width: 300px;
   justify-content: center;
   background-color: aliceblue;
   padding: 10px;
