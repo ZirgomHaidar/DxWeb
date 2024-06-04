@@ -151,9 +151,11 @@ function DevicePage(props) {
                 for any damage caused to your device.
               </span>
             </h2>
-            <p className="learn-more">
-              Learn More <img src={arrow_black} alt="" />
-            </p>
+            <Link to="/DxWeb/Help">
+              <p className="learn-more">
+                Learn More <img src={arrow_black} alt="" />
+              </p>
+            </Link>
           </div>
         </div>
       </div>

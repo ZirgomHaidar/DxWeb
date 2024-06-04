@@ -110,6 +110,15 @@ span {
   justify-content: end;
   margin-top: 26px;
   gap: 20px;
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.learn-more:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
 }
 
 .dp-bottom-left .Collapsible {
