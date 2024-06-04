@@ -51,10 +51,27 @@ const Download = () => {
         })}
       </div>
 
-      <div className="gridplease">
+      <motion.div
+        className="gridplease"
+        variants={{
+          hidden: { opacity: 0 },
+          show: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.2,
+            },
+          },
+        }}
+        initial="hidden"
+        animate="show"
+      >
         {final_dev_list.map((device, index) => {
           return (
-            <div key={index} className="db-card">
+            <motion.div
+              key={index}
+              className="db-card"
+              variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
+            >
               <p className="vendor">{device.vendor}</p>
               <p className="model">{device.model}</p>
               <p className="codename">{device.codename}</p>
@@ -102,10 +119,10 @@ const Download = () => {
                   See Changelog
                 </a>
               </div>
-            </div>
+            </motion.div>
           );
         })}
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
