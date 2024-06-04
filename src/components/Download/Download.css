@@ -6,7 +6,7 @@
   flex-direction: column;
 }
 
-.dn-container input {
+/* .dn-container input {
   padding: 25px;
   width: 50%;
   outline: none;
@@ -16,6 +16,10 @@
   background-color: #414a4f;
   border-radius: 50px;
   border: 2px solid transparent;
+} */
+
+.gridplease .db-card {
+  min-width: 70%;
 }
 
 .select-vendor {
@@ -33,9 +37,10 @@
 
 .heading-dn {
   margin-bottom: 0;
-  font-weight: 600;
+  font-family: "Product Sans Bold";
   font-size: 50px;
   color: white;
+  padding-bottom: 60px;
 }
 
 .db-card span {

@@ -1,12 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Download.css";
 import device_list from "../../assets/devices.json";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Download = () => {
-  //   const [category, setCategory] = useState("All");
-  const datas = { device_list };
+  const [uniqueVendors, getUniqueVendors] = useState([]);
+  const [category, setCategory] = useState("Xiaomi");
+  const [FinalDevList, setFinalDevList] = useState([]);
+
+  useEffect(() => {
+    const vendorSet = new Set(
+      device_list.devices.map((device, index) => device.vendor)
+    );
+    getUniqueVendors(Array.from(vendorSet));
+  }, []);
+
+  const vendors = [...uniqueVendors];
+
+  const final_dev_list = device_list.devices.filter(
+    (device) => device.vendor === category
+  );
+
   return (
     <motion.div
       className="dn-container"
@@ -15,24 +30,29 @@ const Download = () => {
       transition={{ duration: 1 }}
     >
       <p className="heading-dn">Download DroidX-UI</p>
-      <input
+      {/* <input
         type="search"
         name="searchQuery"
         placeholder="Search by device name or code name"
-      ></input>
+      ></input> */}
       <div className="select-vendor">
-        {/* {device_list.devices.map((vendor, index) => {
+        {vendors.map((vendor, index) => {
           return (
-            <div key="index" className="nav-tryDx vendor-category">
-              all
+            <div
+              key={index}
+              onClick={() => setCategory(vendor)}
+              className={
+                category === vendor ? "nav-tryDx vendor-category" : "nav-tryDx"
+              }
+            >
+              {vendor}
             </div>
           );
-        })} */}
-        <div className="nav-tryDx vendor-category">all</div>
+        })}
       </div>
 
       <div className="gridplease">
-        {device_list.devices.map((device, index) => {
+        {final_dev_list.map((device, index) => {
           return (
             <div key={index} className="db-card">
               <p className="vendor">{device.vendor}</p>
