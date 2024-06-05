@@ -48,9 +48,9 @@ export const leads = [
     donate_link: "",
   },
   {
-    name: "Darklord",
+    name: "Abhinav kumar",
     pfp: abhinav,
-    role: "Core Team",
+    role: "Core developer",
     tg_link: "https://t.me/hipexscape",
     donate_link: "",
   },
