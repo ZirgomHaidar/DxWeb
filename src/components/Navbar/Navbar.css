@@ -1,72 +1,12 @@
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 30px 50px;
-}
-
-.nav-right {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-}
-
-.nav-right hr {
-  border: 1px solid #ffffff50;
-  min-height: 40px;
-}
-
-.nav-menu {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  gap: 87px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-.active a {
-  text-decoration: none;
-  color: #3e99ca;
-  background-clip: text;
-  transition: 0.1s;
-}
-
-.active:hover {
-  transform: scale(1.05);
-  transition: 0.1s;
+.nav-menu a:hover {
+  @apply text-[#3e99ca] ease-in-out duration-300;
 }
 
 .nav-tryDx {
-  display: flex;
-  padding: 10px 30px;
-  border-radius: 50px;
-  width: fit-content;
-  justify-content: center;
-  border: 3px solid #72a7c4;
-  cursor: pointer;
-  background: linear-gradient(90deg, #bcd9e9 0%, #72a7c4 43.31%, #2b688a 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 25px;
-  transition: 0.5s;
+  @apply flex border-[3px] px-7 py-3 border-[#72a7c4] rounded-full text-2xl bg-gradient-to-r from-[#bcd9e9] to-[#2b688a] bg-clip-text text-transparent ease-in-out duration-300 justify-center hover:scale-105;
+  font-family: "Product Sans Bold";
 }
 
-.active.nav-tryDx {
-  background: linear-gradient(90deg, #3282b850 100%, #8797a250 0%);
-  border: 3px solid #72a7c4;
-  -webkit-background-clip: border-box;
-  background-clip: border-box;
-  -webkit-text-fill-color: #ffffff;
-}
-
-.nav-tryDx:hover {
-  transform: scale(1.05);
-  transition: 0.5s;
+.nav-tryDx.active {
+  @apply bg-gradient-to-r from-[#3cb1ff54] via-[#24a7ff4f] to-[#49b6ff44] bg-clip-border text-[#83c1fc];
 }

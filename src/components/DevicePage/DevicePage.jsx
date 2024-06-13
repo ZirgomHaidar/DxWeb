@@ -24,13 +24,13 @@ function DevicePage(props) {
   } = location.state;
   return (
     <motion.div
-      className="dp-container"
+      className="dp-container flex flex-col mt-12 my-14 mx-36 justify-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
       <div className="db-card dp-top">
-        <div className="dp-top-left">
+        <div className="dp-top-left flex flex-col justify-between w-1/3">
           <div className="pairs">
             <h3>Model</h3>
             <h1>{vendor + " " + model}</h1>
@@ -48,8 +48,8 @@ function DevicePage(props) {
             <h1>{version}</h1>
           </div>
         </div>
-        <div className="dp-top-right">
-          <div className="right-top">
+        <div className="dp-top-right flex flex-col">
+          <div className="right-top flex flex-row gap-44">
             <div className="pairs">
               <h3>Latest release</h3>
               <h1>{latest_release_date}</h1>
@@ -60,9 +60,9 @@ function DevicePage(props) {
             </div>
           </div>
           <div className="db-card right-bottom">
-            <h3>Maintainer</h3>
-            <h1>{maintainer_name}</h1>
-            <div className="reachout">
+            <h3 className="text-xl">Maintainer</h3>
+            <h1 className="text-5xl py-2">{maintainer_name}</h1>
+            <div className="reachout pt-5">
               <a
                 className="nav-tryDx"
                 href="#"
@@ -72,7 +72,7 @@ function DevicePage(props) {
                 Donate
               </a>
               <a
-                className="tg"
+                className="tg hover:scale-105 duration-100 mx-2"
                 href="#TGLINK"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -80,7 +80,7 @@ function DevicePage(props) {
                 <img src={reach_tg} alt="TG" />
               </a>
               <a
-                className="tg"
+                className="gh hover:scale-105 duration-100"
                 href="#TGLINK"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -88,7 +88,7 @@ function DevicePage(props) {
                 <img src={reach_gh} alt="TG" />
               </a>
             </div>
-            <div className="get-latest-build">
+            <div className="get-latest-build flex justify-center pt-32 gap-12">
               <a
                 className="nav-tryDx build"
                 href="#"
@@ -105,14 +105,14 @@ function DevicePage(props) {
                 rel="noopener noreferrer"
               >
                 Get Latest Build
-                <img src={arrow2} alt="" />
+                <img className="w-12" src={arrow2} alt="" />
               </a>
             </div>
           </div>
         </div>
       </div>
-      <div className="dp-bottom">
-        <div className="dp-bottom-left">
+      <div className="dp-bottom flex flex-row gap-[50px]">
+        <div className="dp-bottom-left flex flex-col gap-5 w-1/2">
           <Collapsible
             open
             transitionTime="200"
@@ -136,23 +136,23 @@ function DevicePage(props) {
             <p>Nothing to See Here. Move Along...!!!</p>
           </Collapsible>
         </div>
-        <div className="dp-bottom-right">
-          <div className="top-help caution">
-            <div className="help-heading">
+        <div className="dp-bottom-right flex flex-col gap-5 w-1/2">
+          <div className="top-help mb-0">
+            <div className="help-heading flex gap-5 ml-[-2rem] mb-12 items-center">
               <img src={caution} alt="" />
-              <h1>Caution</h1>
+              <h1 className="text-4xl">Caution</h1>
             </div>
-            <h2>
+            <h2 className="text-[1.7rem]">
               Flashing a custom ROM can breathe new life into your phone, but
               proceed with caution: there's a risk of bricking your device if
               not done correctly. <br />{" "}
-              <span>
+              <span style={{ "font-family": "Product Sans Bold" }}>
                 Back up everything first! Our team cannot be held responsible
                 for any damage caused to your device.
               </span>
             </h2>
             <Link to="/DxWeb/Help">
-              <p className="learn-more">
+              <p className="learn-more flex justify-end mt-6 gap-5 text-2xl items-center duration-200 hover:scale-105">
                 Learn More <img src={arrow_black} alt="" />
               </p>
             </Link>

@@ -76,7 +76,7 @@ function CustomCarousel({ children }) {
   return (
     <>
       <button
-        className="slider__btn-prev"
+        className="slider__btn-prev w-40 duration-100 active:scale-110"
         onMouseEnter={AutoPlayStop}
         onMouseLeave={AutoPlayStart}
         onClick={(e) => {
@@ -89,7 +89,7 @@ function CustomCarousel({ children }) {
 
       <div className="myslider">
         <div
-          className="container__slider"
+          className="container__slider p-0 overflow-hidden m-2 flex items-center"
           onMouseEnter={AutoPlayStop}
           onMouseLeave={AutoPlayStart}
           ref={elementRef}
@@ -107,7 +107,7 @@ function CustomCarousel({ children }) {
             );
           })}
         </div>
-        <div className="container__slider__links">
+        <div className="container__slider__links flex justify-center">
           {children.map((item, index) => {
             return (
               <button
@@ -128,7 +128,7 @@ function CustomCarousel({ children }) {
       </div>
 
       <button
-        className="slider__btn-next"
+        className="slider__btn-next w-40 duration-100 active:scale-110"
         onMouseEnter={AutoPlayStop}
         onMouseLeave={AutoPlayStart}
         onClick={(e) => {

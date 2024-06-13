@@ -9,20 +9,23 @@ import { motion } from "framer-motion";
 const About = () => {
   return (
     <motion.div
-      className="about-container"
+      className="about-container flex flex-col my-16 mx-36 gap-5"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <div className="about-top">
-        <div className="top-left">
-          <p>How it started</p>
-          <h1>
+      <div className="about-top flex flex-row gap-5">
+        <div className="top-left bg-[#19415c] rounded-[27px] py-10 px-6">
+          <p className="text-[#f2eba7] text-2xl pb-24">How it started</p>
+          <h1
+            className="pb-20 text-7xl"
+            style={{ "font-family": "Product Sans Bold" }}
+          >
             Our dream is to <br />
             make the most <br />
             stable Custom Rom
           </h1>
-          <h4>
+          <h4 className="text-3xl pt-12 leading-10">
             DroidX-UI is founded by <span>Ashwani</span>, a passionate lifelong
             learner. With relentless dedication, they gathered a team of best
             maintainers and launched this innovative project, creating a global
@@ -34,11 +37,11 @@ const About = () => {
             desire to explore, learn and grow.{" "}
           </h4>
         </div>
-        <div className="top-right">
-          <div className="top-section">
+        <div className="top-right flex flex-col gap-5">
+          <div className="top-section w-[775px]">
             <img src={team_work} alt="" />
           </div>
-          <div className="bottom-section">
+          <div className="bottom-section grid grid-cols-2 gap-7 p-10 bg-[#19415c] rounded-[27px]">
             <div className="inner-container">
               <h1>1+</h1>
               <h3>Years Experience</h3>
@@ -58,38 +61,45 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="about-middle">
+      <div className="about-middle bg-[#19415c] rounded-[27px] p-9 pb-20">
         <div>
-          <p>Meet the team</p>
+          <p className="text-[#f2eba7] text-2xl">Meet the team</p>
         </div>
-        <div className="view-all">
-          <h1>
+        <div className="view-all flex justify-between items-center py-10">
+          <h1 className="text-5xl">
             Meet Our Dedicated Team of <br />
             Leaders and Maintainers
           </h1>
-          <p>
+          <p className="flex items-center text-[#f2eba7] text-2xl gap-5">
             view all members
             <Link to="/DxWeb/Team">
               <img src={Arrow} alt="" />
             </Link>
           </p>
         </div>
-        <div className="image-area">
+        <div className="image-area flex gap-10 overflow-x-scroll">
           {leads.map((lead, index) => {
             return (
-              <div key={index} className="about-img">
-                <img src={lead.pfp} alt="where bro pic ?" />
-                <div className="lead-desc">
-                  <p>{lead.name}</p>
-                  <p>{lead.role}</p>
+              <div
+                key={index}
+                className="about-img flex flex-col items-center relative"
+              >
+                <img
+                  className="min-w-48 h-[300px] rounded-[27px] object-cover"
+                  src={lead.pfp}
+                  alt="where bro pic ?"
+                />
+                <div className="lead-desc bg-[#19415c70] backdrop-blur rounded-lg p-2 w-40 absolute bottom-5">
+                  <p className="text-slate-100 text-xl">{lead.name}</p>
+                  <p className="text-slate-100 text-xs">{lead.role}</p>
                 </div>
               </div>
             );
           })}
         </div>
       </div>
-      <div className="about-bottom">
-        <div className="top-left b-left">
+      <div className="about-bottom flex flex-row gap-5">
+        <div className="mission p-10 pl-7 w-1/2 bg-[#19415c] rounded-[27px]">
           <p>Our vision</p>
           <h1>Give the Pixel feel to non Pixel devices</h1>
           <h4>
@@ -98,7 +108,7 @@ const About = () => {
             freedom and developers push the boundaries of the Pixel experience.
           </h4>
         </div>
-        <div className="top-left b-right">
+        <div className="mission p-10 pl-7 w-1/2 bg-[#19415c] rounded-[27px]">
           <p>Our mission</p>
           <h1>Providing stable and monthly updates</h1>
           <h4>

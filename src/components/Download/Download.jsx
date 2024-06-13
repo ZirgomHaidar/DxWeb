@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const Download = () => {
   const [uniqueVendors, getUniqueVendors] = useState([]);
   const [category, setCategory] = useState("Xiaomi");
-  const [FinalDevList, setFinalDevList] = useState([]);
+  //const [FinalDevList, setFinalDevList] = useState([]);
 
   useEffect(() => {
     const vendorSet = new Set(
@@ -24,26 +24,29 @@ const Download = () => {
 
   return (
     <motion.div
-      className="dn-container"
+      className="dn-container flex flex-col mt-12 items-center justify-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <p className="heading-dn">Download DroidX-UI</p>
+      <p
+        className="heading-dn text-5xl mb-12"
+        style={{ "font-family": "Product Sans Bold" }}
+      >
+        Download DroidX-UI
+      </p>
       {/* <input
         type="search"
         name="searchQuery"
         placeholder="Search by device name or code name"
       ></input> */}
-      <div className="select-vendor">
+      <div className="select-vendor flex gap-3">
         {vendors.map((vendor, index) => {
           return (
             <div
               key={index}
               onClick={() => setCategory(vendor)}
-              className={
-                category === vendor ? "nav-tryDx vendor-category" : "nav-tryDx"
-              }
+              className={category === vendor ? "nav-tryDx active" : "nav-tryDx"}
             >
               {vendor}
             </div>
@@ -72,9 +75,16 @@ const Download = () => {
               className="db-card"
               variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
             >
-              <p className="vendor">{device.vendor}</p>
-              <p className="model">{device.model}</p>
-              <p className="codename">{device.codename}</p>
+              <p
+                className="vendor text-2xl"
+                style={{ "font-family": "Product Sans Bold" }}
+              >
+                {device.vendor}
+              </p>
+              <p className="model text-3xl">{device.model}</p>
+              <p className="codename text-xl mt-12 p-2 w-fit rounded-xl bg-[#17557f]">
+                {device.codename}
+              </p>
               <p className="maintainer">
                 <span>Maintainer</span> : {device.maintainer_name}
               </p>
@@ -91,9 +101,9 @@ const Download = () => {
                   {device.status}
                 </span>
               </p>
-              <div className="dn-ch">
+              <div className="dn-ch text-xl">
                 <Link
-                  className="get-build"
+                  className="get-build hover:bg-[#adb8f0] hover:text-[#162025] duration-100"
                   to="/DxWeb/DevicePage"
                   state={{
                     model: device.model,
@@ -109,7 +119,6 @@ const Download = () => {
                 >
                   Get Build
                 </Link>
-                {/* href={device.Links[0].Gapps} */}
                 <a
                   className="changelog"
                   href={device.device_cglg}

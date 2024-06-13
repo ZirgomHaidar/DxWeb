@@ -5,8 +5,8 @@ import heart from "../../assets/heart.svg";
 const Footer = () => {
   return (
     <>
-      <div className="footer">
-        <div className="middle">
+      <div className="footer-container relative flex flex-col items-center justify-center h-[500px] bg-zinc-950">
+        <div className="middle flex gap-48 justify-center">
           <div className="documentation-info">
             <h2>Documentation</h2>
             <h4>Maintainership form</h4>
@@ -27,9 +27,14 @@ const Footer = () => {
             <h4>Disclaimer</h4>
           </div>
         </div>
-        <div className="bottom">
-          <p>
-            Made with <img src={heart} alt="heart where bro ?" />
+        <div className="bottom absolute bottom-2">
+          <p className="flex items-center">
+            Made with{" "}
+            <img
+              className="p-2 hover:scale-125 duration-300 ease-in-out"
+              src={heart}
+              alt="heart where bro ?"
+            />
             by Zirgom Haidar & Kshitij Bhale
           </p>
         </div>

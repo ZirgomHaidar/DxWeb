@@ -10,18 +10,24 @@ const Navbar = () => {
 
   return (
     <motion.div
-      className="navbar"
+      className="navbar-container flex flex-row justify-between m-10 items-center text-nowrap"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
       <Link to="/DxWeb/">
-        <img src={logo} alt="DX-UI" onClick={() => setMenu("home")} />
+        <img
+          className="w-auto"
+          src={logo}
+          alt="DX-UI"
+          onClick={() => setMenu("home")}
+        />
       </Link>
 
-      <div className="nav-right">
-        <ul className="nav-menu">
+      <div className="nav-right flex gap-8 items-center">
+        <ul className="nav-menu flex items-center gap-20 text-xl ease-in-out duration-300">
           <li
+            c
             onClick={() => setMenu("home")}
             className={menu === "home" ? "active" : ""}
           >
@@ -43,11 +49,11 @@ const Navbar = () => {
             <ShowMore />
           </li>
         </ul>
-        <hr />
+        <hr className="border-[0.5px] border-gray-500 h-10" />
         <Link to="/DxWeb/Download">
           <div
             onClick={() => setMenu("Download")}
-            className={menu === "Download" ? "active nav-tryDx" : "nav-tryDx"}
+            className={menu === "Download" ? "nav-tryDx active" : "nav-tryDx"}
           >
             <h4>Try Droidx-UI</h4>
           </div>
