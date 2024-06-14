@@ -10,7 +10,7 @@ const ContactUs = () => {
       transition={{ duration: 0.2 }}
     >
       <div className="instructions">
-        <h3 className="text-2xl" style={{ "font-family": "Product Sans Bold" }}>
+        <h3 className="text-2xl" style={{ fontFamily: "Product Sans Bold" }}>
           If you are here then you are probably fukd up. But it's fixable.
         </h3>
         <ol className="p-5 list-decimal">

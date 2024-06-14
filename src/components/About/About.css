@@ -8,12 +8,12 @@
 }
 
 .inner-container h1 {
-  @apply text-5xl pb-5;
+  @apply text-4xl md:text-5xl pb-5;
   font-family: "Product Sans Bold";
 }
 
 .inner-container h3 {
-  @apply text-2xl;
+  @apply text-[1.4rem] md:text-2xl;
   color: #cceef6;
 }
 
@@ -22,12 +22,12 @@
 }
 
 .mission h1 {
-  @apply text-4xl pb-5;
+  @apply text-2xl md:text-4xl pb-5;
   font-family: "Product Sans Bold";
 }
 
 .mission h4 {
-  @apply text-2xl pb-2;
+  @apply text-xl md:text-2xl pb-2;
   font-family: "Product Sans Light Regular";
 }
 

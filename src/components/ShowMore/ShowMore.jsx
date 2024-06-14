@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 const ShowMore = () => {
   return (
     <div className="dropdown block">
-      <a className="active hover:text-[#2d6c87] hover:pb-24">More</a>
+      <a className="active hover:text-[#2d6c87] hover:pb-24 cursor-pointer">
+        More
+      </a>
       <div className="dropdown-content">
         <Link
           className="block p-3 text-xl hover:scale-105 duration-300"

@@ -3,5 +3,5 @@
 }
 
 .dropdown:hover .dropdown-content {
-  @apply flex items-center flex-col border border-[#95959560] bg-[#2d6c8750] rounded-xl backdrop-blur py-3 px-5 min-w-24 absolute top-28 right-64 z-10 shadow-lg;
+  @apply flex items-center flex-col border border-[#95959560] bg-[#2d6c8750] rounded-xl backdrop-blur py-3 px-5 min-w-24 h-fit absolute bottom-36 right-[128px] md:bottom-0 md:top-16 md:right-[19.5rem] z-30;
 }

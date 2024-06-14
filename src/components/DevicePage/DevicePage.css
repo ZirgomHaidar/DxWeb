@@ -1,9 +1,9 @@
 .db-card.dp-top {
-  @apply p-14 mb-12 flex-row gap-24 m-0;
+  @apply p-7 md:p-14 mb-10 md:mb-12 flex-col md:flex-row md:gap-24 m-0;
 }
 
 .nav-tryDx.build {
-  @apply flex gap-24 text-nowrap px-10;
+  @apply flex gap-10 md:gap-24 text-nowrap px-10;
 }
 
 .pairs h3,
@@ -13,7 +13,7 @@
 }
 
 .pairs h1 {
-  @apply text-4xl;
+  @apply text-3xl md:text-4xl;
 }
 
 .db-card.right-bottom {

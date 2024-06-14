@@ -25,12 +25,12 @@
 .maintainer,
 .version,
 .status {
-  @apply text-xl my-1;
+  @apply md:text-xl my-1;
 }
 
 .get-build,
 .changelog {
-  @apply flex rounded-full min-w-[350px] justify-center text-[#162025] bg-slate-200 mt-2 p-3;
+  @apply flex rounded-full min-w-[280px] md:min-w-[350px] justify-center text-[#162025] bg-slate-200 mt-2 p-1 md:p-3;
 }
 
 .changelog {

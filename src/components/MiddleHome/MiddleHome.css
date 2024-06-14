@@ -1,13 +1,13 @@
 .feature-list h1 {
   font-family: "Product Sans Bold";
-  @apply text-5xl;
+  @apply text-3xl md:text-5xl;
 }
 
 .feature-list p {
   font-family: "Product Sans Light Regular";
-  @apply text-2xl pt-4;
+  @apply text-xl md:text-2xl pt-4;
 }
 
 .feature-layout {
-  @apply bg-[#1f2f3a] rounded-xl p-12 m-3;
+  @apply bg-[#1f2f3a] rounded-xl p-10 md:p-12 m-3;
 }

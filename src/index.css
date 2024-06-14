@@ -29,15 +29,15 @@ body::-webkit-scrollbar {
 /* lazy loading doesnt load the css soo it weird */
 
 .db-card {
-  @apply flex flex-col p-10 pb-6 m-12 bg-[#162025] rounded-[2.5rem] border border-[#414a4f];
+  @apply flex flex-col md:p-10 bg-[#162025] rounded-[2.5rem] border border-[#414a4f];
 }
 
 .gridplease {
-  @apply grid grid-cols-3 mt-8;
+  @apply grid md:grid-cols-3 gap-7 md:gap-14 mt-10 md:mt-20 mb-11;
 }
 
 .top-help {
-  @apply bg-[#fc6363] text-black py-7 px-16 rounded-[32px] mb-5;
+  @apply bg-[#fc6363] text-black py-7 px-6 md:px-16 rounded-[32px] mb-5;
 }
 
 .reachout {

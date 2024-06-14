@@ -11,7 +11,7 @@ const Download = () => {
 
   useEffect(() => {
     const vendorSet = new Set(
-      device_list.devices.map((device, index) => device.vendor)
+      device_list.devices.map((device) => device.vendor)
     );
     getUniqueVendors(Array.from(vendorSet));
   }, []);
@@ -30,8 +30,8 @@ const Download = () => {
       transition={{ duration: 1 }}
     >
       <p
-        className="heading-dn text-5xl mb-12"
-        style={{ "font-family": "Product Sans Bold" }}
+        className="heading-dn text-4xl md:text-5xl mb-12"
+        style={{ fontFamily: "Product Sans Bold" }}
       >
         Download DroidX-UI
       </p>
@@ -40,7 +40,7 @@ const Download = () => {
         name="searchQuery"
         placeholder="Search by device name or code name"
       ></input> */}
-      <div className="select-vendor flex gap-3">
+      <div className="select-vendor flex flex-wrap gap-3 justify-center">
         {vendors.map((vendor, index) => {
           return (
             <div
@@ -72,17 +72,17 @@ const Download = () => {
           return (
             <motion.div
               key={index}
-              className="db-card"
+              className="db-card p-7"
               variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
             >
               <p
-                className="vendor text-2xl"
-                style={{ "font-family": "Product Sans Bold" }}
+                className="vendor text-xl md:text-2xl"
+                style={{ fontFamily: "Product Sans Bold" }}
               >
                 {device.vendor}
               </p>
-              <p className="model text-3xl">{device.model}</p>
-              <p className="codename text-xl mt-12 p-2 w-fit rounded-xl bg-[#17557f]">
+              <p className="model text-2xl md:text-3xl">{device.model}</p>
+              <p className="codename text-[1rem] mt-10 p-2 w-fit rounded-xl bg-[#17557f] mb-2">
                 {device.codename}
               </p>
               <p className="maintainer">

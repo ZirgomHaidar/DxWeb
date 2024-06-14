@@ -6,6 +6,7 @@ import "./custom.slider.css";
 
 function CustomCarousel({ children }) {
   const [activeIndex, setActiveIndex] = useState(-1);
+  const [activeyIndex, setActiveyIndex] = useState(1);
   const [slideDone, setSlideDone] = useState(true);
   const [timeID, setTimeID] = useState(null);
 
@@ -41,23 +42,43 @@ function CustomCarousel({ children }) {
   }
 
   const slideNext = () => {
-    setActiveIndex((val) => {
-      if (val >= children.length - 1) {
-        return -1;
-      } else {
-        return val + 1;
-      }
-    });
+    if (document.documentElement.clientWidth >= 768) {
+      setActiveIndex((val) => {
+        if (val >= children.length - 1) {
+          return -1;
+        } else {
+          return val + 1;
+        }
+      });
+    } else {
+      setActiveyIndex((val) => {
+        if (val >= children.length - 1) {
+          return 0;
+        } else {
+          return val + 1;
+        }
+      });
+    }
   };
 
   const slidePrev = () => {
-    setActiveIndex((val) => {
-      if (val <= 0) {
-        return children.length - 1;
-      } else {
-        return val - 1;
-      }
-    });
+    if (document.documentElement.clientWidth >= 768) {
+      setActiveIndex((val) => {
+        if (val <= 0) {
+          return children.length - 1;
+        } else {
+          return val - 1;
+        }
+      });
+    } else {
+      setActiveyIndex((val) => {
+        if (val <= 0) {
+          return children.length - 1;
+        } else {
+          return val - 1;
+        }
+      });
+    }
   };
 
   const AutoPlayStop = () => {
@@ -76,7 +97,7 @@ function CustomCarousel({ children }) {
   return (
     <>
       <button
-        className="slider__btn-prev w-40 duration-100 active:scale-110"
+        className="slider__btn-prev duration-100 active:scale-110 ml-3 md:ml-0"
         onMouseEnter={AutoPlayStop}
         onMouseLeave={AutoPlayStart}
         onClick={(e) => {
@@ -84,12 +105,12 @@ function CustomCarousel({ children }) {
           slidePrev();
         }}
       >
-        <img className="arrow-left" src={left_arrow}></img>
+        <img className="arrow-left w-16" src={left_arrow}></img>
       </button>
 
-      <div className="myslider">
+      <div className="myslider md:m-0 mt-[-40px] w-[400px] md:w-fit">
         <div
-          className="container__slider p-0 overflow-hidden m-2 flex items-center"
+          className="container__slider p-0 overflow-y-hidden overflow-x-hidden m-3 mb-10 h-[700px] md:h-fit md:m-5 relative md:flex"
           onMouseEnter={AutoPlayStop}
           onMouseLeave={AutoPlayStart}
           ref={elementRef}
@@ -98,7 +119,9 @@ function CustomCarousel({ children }) {
             return (
               <div
                 className={
-                  "slider__item slider__item-active-" + (activeIndex + 1)
+                  document.documentElement.clientWidth >= 768
+                    ? "slider__item slider__item-active-" + (activeIndex + 1)
+                    : "slider__item slider__item-y-active-" + (activeyIndex + 1)
                 }
                 key={index}
               >
@@ -107,7 +130,7 @@ function CustomCarousel({ children }) {
             );
           })}
         </div>
-        <div className="container__slider__links flex justify-center">
+        <div className="container__slider__links md:flex justify-center hidden">
           {children.map((item, index) => {
             return (
               <button
@@ -119,7 +142,9 @@ function CustomCarousel({ children }) {
                 }
                 onClick={(e) => {
                   e.preventDefault();
-                  setActiveIndex(index);
+                  document.documentElement.clientWidth >= 768
+                    ? setActiveIndex(index)
+                    : setActiveyIndex(index);
                 }}
               ></button>
             );
@@ -128,7 +153,7 @@ function CustomCarousel({ children }) {
       </div>
 
       <button
-        className="slider__btn-next w-40 duration-100 active:scale-110"
+        className="slider__btn-next duration-100 active:scale-110 mr-3 md:mr-0"
         onMouseEnter={AutoPlayStop}
         onMouseLeave={AutoPlayStart}
         onClick={(e) => {
@@ -136,7 +161,7 @@ function CustomCarousel({ children }) {
           slideNext();
         }}
       >
-        <img className="arrow-right" src={right_arrow}></img>
+        <img className="arrow-right w-16" src={right_arrow}></img>
       </button>
     </>
   );

@@ -11,9 +11,9 @@ const MiddleHome = () => {
   const item5 = features[4];
 
   return (
-    <div className="feature-container flex items-center justify-center m-60 mb-40">
+    <div className="feature-container flex items-center justify-center m-1 mt-16 md:m-60 mb-16 md:mb-40">
       <div className="feature-list">
-        <div className="feature-top grid grid-flow-col">
+        <div className="feature-top grid md:grid-flow-col">
           <div className="feature-layout">
             <h1>{item1.name}</h1>
             <p>{item1.desc}</p>
@@ -24,8 +24,8 @@ const MiddleHome = () => {
           </div>
         </div>
 
-        <div className="feature-bottom grid grid-flow-col">
-          <div className="feature-left grid col-span-2">
+        <div className="feature-bottom grid md:grid-flow-col">
+          <div className="feature-left grid md:col-span-2">
             <div className="feature-layout">
               <h1>{item3.name}</h1>
               <p>{item3.desc}</p>
@@ -36,12 +36,12 @@ const MiddleHome = () => {
             </div>
           </div>
 
-          <div className="feature-right grid col-span-1">
+          <div className="feature-right grid md:col-span-1">
             <div className="feature-layout">
               <h1>{item5.name}</h1>
               <p>{item5.desc}</p>
             </div>
-            <div className="nav-tryDx text-5xl m-2 mb-3 rounded-full border-[6px] border-[#72a7c4] items-center hover:scale-100">
+            <div className="nav-tryDx hidden md:flex text-5xl m-2 mb-3 rounded-full border-[6px] border-[#72a7c4] items-center hover:scale-100">
               <Link to="/DxWeb/Download">Try Droidx-UI</Link>
             </div>
           </div>

@@ -7,24 +7,25 @@ import { motion } from "framer-motion";
 const Team = () => {
   return (
     <motion.div
-      className="teams-container m-12 flex flex-col items-center justify-center"
+      className="teams-container md:m-12 flex flex-col items-center justify-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <p className="first-header text-3xl p-8">
+      <p className="first-header text-2xl md:text-3xl p-6 md:p-8 text-center md:text-balance">
         These are the people who play an important role in maintaining
         <span className="text-[#3282b8]"> DROID-X UI </span>source from day to
         day work to monthly updates
       </p>
       <div className="mains flex flex-col items-center justify-center">
         <p
-          className="heading mt-12 text-5xl mb-14"
-          style={{ "font-family": "Product Sans Bold" }}
+          className="heading mt-6 md:mt-12 text-4xl md:text-5xl mb-6 md:mb-14 text-center md:text-balance"
+          style={{ fontFamily: "Product Sans Bold" }}
         >
-          Back Bone of the <span className="text-[#3282b8]"> DROID-X UI </span>
+          Back Bone of the
+          <span className="text-[#3282b8]"> DROID-X UI </span>
         </p>
-        <div className="gridplease gap-x-64 gap-y-24">
+        <div className="gridplease md:gap-x-64 gap-y-16 md:gap-y-24 mb-10">
           {leads.map((lead, index) => {
             return (
               <div

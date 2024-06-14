@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 
 const TopHome = () => {
   return (
-    <div className="header flex my-28 mx-14">
-      <div className="dx-reach-out flex gap-24 flex-col my-9 items-center">
+    <div className="header flex md:my-28 mx-8 md:mx-14">
+      <div className="dx-reach-out hidden md:flex gap-24 flex-col my-9 items-center">
         <a
           href="https://github.com/DroidX-UI"
           target="_blank"
@@ -31,22 +31,22 @@ const TopHome = () => {
           <img src={logo_X} alt="X" />
         </a>
       </div>
-      <div className="dx-middle-desc flex flex-col mx-[90px]">
+      <div className="dx-middle-desc flex flex-col md:mx-[90px]">
         <p
-          className="text-7xl leading-normal"
-          style={{ "font-family": "Product Sans Bold" }}
+          className="text-4xl md:text-7xl leading-snug md:leading-normal"
+          style={{ fontFamily: "Product Sans Bold" }}
         >
           Spice up your Android <br />
           experience with
           <br />
           <span className="text-[#3282b8]">DroidX-UI</span>
         </p>
-        <div className="nav-tryDx mt-5 w-1/4">
+        <div className="nav-tryDx mt-5 md:w-1/4">
           <Link to="/DxWeb/Download">Try Droidx-UI</Link>
         </div>
         <div
-          className="dx-support-nums flex mt-24 gap-56"
-          style={{ "font-family": "Product Sans Bold" }}
+          className="dx-support-nums hidden md:flex mt-24 gap-56"
+          style={{ fontFamily: "Product Sans Bold" }}
         >
           <p className="text-3xl leading-snug">
             <span className="text-[#3282b8] text-6xl">30+</span> <br />
@@ -65,7 +65,7 @@ const TopHome = () => {
           </p>
         </div>
       </div>
-      <div className="dx-glimpse w-[500px] absolute right-0 top-32">
+      <div className="dx-glimpse md:w-[500px] hidden md:inline-block absolute right-0 top-32">
         <img className="img1" src={glimpse} alt="" />
       </div>
     </div>

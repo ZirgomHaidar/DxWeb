@@ -24,7 +24,7 @@ const StuckedSomewhere = () => {
   return (
     <>
       <div
-        className="stuck-Container fixed cursor-pointer right-8 bottom-8 w-56 h-16 rounded-full bg-gradient-to-r from-[#5866ad] via-[#c362ad] to-[#e5a0a0]"
+        className="stuck-Container hidden md:block md:fixed cursor-pointer right-8 bottom-8 w-56 h-16 rounded-full bg-gradient-to-r from-[#5866ad] via-[#c362ad] to-[#e5a0a0]"
         onClick={() => setShowCU(showCU !== true)}
         ref={divRef}
       >
