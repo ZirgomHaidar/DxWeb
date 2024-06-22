@@ -1,23 +1,38 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./Navbar.css";
 import logo from "../../assets/dxlogo_2.svg";
 import navopen from "../../assets/navopen.svg";
 import navclose from "../../assets/navclose.svg";
 import { Link } from "react-router-dom";
-import ShowMore from "../ShowMore/ShowMore";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [menu, setMenu] = useState("home");
+  const [showMore, setShowMore] = useState(false);
   const menuRef = useRef();
-
   const openMenu = () => {
     menuRef.current.style.top = "0";
   };
 
   const closeMenu = () => {
-    menuRef.current.style.top = "-1500px";
+    menuRef.current.style.top = "-2500px";
   };
+
+  const divRef = useRef(null);
+  const handleClickOutside = (event) => {
+    try {
+      if (!divRef.current.contains(event.target)) {
+        setShowMore(false);
+      }
+    } catch (error) {
+      /*nothing*/
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [divRef]);
 
   return (
     <motion.div
@@ -50,31 +65,104 @@ const Navbar = () => {
         />
         <ul className="nav-menu flex flex-col h-fit md:flex-row items-center justify-center gap-10 mt-72 md:m-0 md:gap-20 text-xl md:pt-0 ease-in-out duration-300">
           <li
-            onClick={() => setMenu("home")}
+            onClick={() => {
+              setMenu("home");
+              if (document.documentElement.clientWidth <= 768) closeMenu();
+            }}
             className={menu === "home" ? "active" : ""}
           >
             <Link to="/DxWeb/">Home</Link>
           </li>
           <li
-            onClick={() => setMenu("blog")}
+            onClick={() => {
+              setMenu("blog");
+              if (document.documentElement.clientWidth <= 768) closeMenu();
+            }}
             className={menu === "blog" ? "active" : ""}
           >
             <Link to="/DxWeb/Blog">Blog</Link>
           </li>
           <li
-            onClick={() => setMenu("team")}
+            onClick={() => {
+              setMenu("team");
+              if (document.documentElement.clientWidth <= 768) closeMenu();
+            }}
             className={menu === "team" ? "active" : ""}
           >
             <Link to="/DxWeb/Team">Team</Link>
           </li>
-          <li className={menu === "more" ? "active" : ""}>
-            <ShowMore />
+          <li
+            onClick={() => {
+              setMenu("more");
+              setShowMore(true);
+            }}
+            className={menu === "more" ? "text-[#3cb1ff] bg-clip-text" : ""}
+          >
+            <div className="cursor-pointer" ref={divRef}>
+              <p className="hover:text-[#3cb1ff]">More</p>{" "}
+              {showMore ? (
+                <div className="dropdown absolute right-0 bottom-0 md:right-0 md:top-0 text-white">
+                  <div className="dropdown-content">
+                    <Link
+                      className={
+                        window.location.pathname === "/DxWeb/About"
+                          ? "p-3 text-xl hover:scale-105 duration-300 text-[#3cb1ff]"
+                          : "p-3 text-xl"
+                      }
+                      to="/DxWeb/About"
+                      onClick={() => {
+                        if (document.documentElement.clientWidth <= 768)
+                          closeMenu();
+                      }}
+                    >
+                      About
+                    </Link>
+                    <a
+                      className="p-3 text-xl hover:scale-105 duration-300"
+                      href="https://t.me/DroidXUI_walls"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Wallpaper
+                    </a>
+                    <a
+                      className="p-3 text-xl hover:scale-105 duration-300"
+                      href="https://github.com/DroidX-UI/Release_changelogs/blob/14/DroidX-Changelogs.mk"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Changelog
+                    </a>
+                    <Link
+                      className={
+                        window.location.pathname === "/DxWeb/Help"
+                          ? "p-3 text-xl hover:scale-105 duration-300 text-[#3cb1ff]"
+                          : "p-3 text-xl"
+                      }
+                      to="/DxWeb/Help"
+                      onClick={() => {
+                        if (document.documentElement.clientWidth <= 768)
+                          closeMenu();
+                        setShowMore(false);
+                      }}
+                    >
+                      Help
+                    </Link>
+                  </div>
+                </div>
+              ) : (
+                <></>
+              )}
+            </div>
           </li>
           <hr className="hidden md:block border-[0.5px] border-gray-500 h-10" />
           <li>
             <Link to="/DxWeb/Download">
               <div
-                onClick={() => setMenu("Download")}
+                onClick={() => {
+                  setMenu("Download");
+                  if (document.documentElement.clientWidth <= 768) closeMenu();
+                }}
                 className={
                   menu === "Download" ? "nav-tryDx active" : "nav-tryDx"
                 }

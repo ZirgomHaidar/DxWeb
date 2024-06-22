@@ -53,3 +53,7 @@ body::-webkit-scrollbar {
   font-family: "Product Sans Light Regular";
   @apply pt-5;
 }
+
+.nav-menu .active {
+  @apply text-[#3cb1ff] scale-105 duration-100;
+}

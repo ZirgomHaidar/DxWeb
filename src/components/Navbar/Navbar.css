@@ -1,5 +1,5 @@
 .nav-menu a:hover {
-  @apply text-[#3e99ca] ease-in-out duration-300;
+  @apply text-[#3cb1ff] ease-in-out duration-300;
 }
 
 .nav-tryDx {
@@ -9,4 +9,8 @@
 
 .nav-tryDx.active {
   @apply bg-gradient-to-r from-[#3cb1ff54] via-[#24a7ff4f] to-[#49b6ff44] bg-clip-border text-[#83c1fc];
+}
+
+.dropdown-content {
+  @apply flex items-center flex-col border border-[#95959560] bg-[#2d6c8750] rounded-xl backdrop-blur py-3 px-5 min-w-24 h-fit absolute bottom-36 right-[128px] md:bottom-0 md:top-16 md:right-[19.5rem] z-30;
 }

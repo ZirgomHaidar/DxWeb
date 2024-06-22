@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Download.css";
-import device_list from "../../assets/devices.json";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Loading from "../Loading/Loading";
@@ -10,6 +9,7 @@ const Download = () => {
   const [category, setCategory] = useState("All");
   const [fetchedData, setFetchedData] = useState([]);
   const [FinalDevList, setFinalDevList] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     fetchData();
@@ -24,6 +24,7 @@ const Download = () => {
       setFetchedData(data);
       setFinalDevList(data);
       getVendorList();
+      setIsLoading(true);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -45,7 +46,7 @@ const Download = () => {
     }
   }
 
-  return (
+  return isLoading ? (
     <motion.div
       className="dn-container flex flex-col mt-12 items-center justify-center"
       initial={{ opacity: 0 }}
@@ -159,6 +160,8 @@ const Download = () => {
         })}
       </motion.div>
     </motion.div>
+  ) : (
+    <Loading />
   );
 };
 
