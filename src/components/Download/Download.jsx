@@ -3,24 +3,47 @@ import "./Download.css";
 import device_list from "../../assets/devices.json";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import Loading from "../Loading/Loading";
 
 const Download = () => {
   const [uniqueVendors, getUniqueVendors] = useState([]);
-  const [category, setCategory] = useState("Xiaomi");
-  //const [FinalDevList, setFinalDevList] = useState([]);
+  const [category, setCategory] = useState("All");
+  const [fetchedData, setFetchedData] = useState([]);
+  const [FinalDevList, setFinalDevList] = useState([]);
 
   useEffect(() => {
-    const vendorSet = new Set(
-      device_list.devices.map((device) => device.vendor)
-    );
-    getUniqueVendors(Array.from(vendorSet));
+    fetchData();
   }, []);
 
-  const vendors = [...uniqueVendors];
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        "https://droidx-api.onrender.com/devicelist"
+      );
+      const data = await response.json();
+      setFetchedData(data);
+      setFinalDevList(data);
+      getVendorList();
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
-  const final_dev_list = device_list.devices.filter(
-    (device) => device.vendor === category
-  );
+  function getVendorList() {
+    const vendors = new Set(fetchedData.map((device) => device.vendor));
+    getUniqueVendors(["All", ...Array.from(vendors)]);
+  }
+
+  function selectedVendor(selected) {
+    setCategory(selected);
+    if (category !== "All") {
+      setFinalDevList(
+        fetchedData.filter((device) => device.vendor === category)
+      );
+    } else {
+      setFinalDevList(fetchedData);
+    }
+  }
 
   return (
     <motion.div
@@ -41,11 +64,11 @@ const Download = () => {
         placeholder="Search by device name or code name"
       ></input> */}
       <div className="select-vendor flex flex-wrap gap-3 justify-center">
-        {vendors.map((vendor, index) => {
+        {uniqueVendors.map((vendor, index) => {
           return (
             <div
               key={index}
-              onClick={() => setCategory(vendor)}
+              onClick={() => selectedVendor(vendor)}
               className={category === vendor ? "nav-tryDx active" : "nav-tryDx"}
             >
               {vendor}
@@ -68,7 +91,7 @@ const Download = () => {
         initial="hidden"
         animate="show"
       >
-        {final_dev_list.map((device, index) => {
+        {FinalDevList.map((device, index) => {
           return (
             <motion.div
               key={index}
@@ -86,10 +109,10 @@ const Download = () => {
                 {device.codename}
               </p>
               <p className="maintainer">
-                <span>Maintainer</span> : {device.maintainer_name}
+                <span>Maintainer</span> : {device.maintainer}
               </p>
               <p className="version">
-                <span>Version</span> : {device.version}
+                <span>Version</span> : {device.gapps.version}
               </p>
               <p className="status">
                 <span>Status</span> :{" "}
@@ -108,20 +131,23 @@ const Download = () => {
                   state={{
                     model: device.model,
                     status: device.status,
-                    version: device.version,
-                    maintainer_name: device.maintainer_name,
+                    version: device.gapps.version,
+                    maintainer_name: device.maintainer,
                     codename: device.codename,
-                    latest_release_date: device.last_updated,
+                    latest_release_date: device.gapps.last_updated,
+                    download: device.gapps.download,
                     vendor: device.vendor,
-                    dev_chlg: device.device_cglg,
-                    maintainer_git: device.gitProfile,
+                    dev_chlg: device.changelog,
+                    maintainer_git: device.github,
+                    maintainer_tg: device.telegram,
+                    old_release: device.old,
                   }}
                 >
                   Get Build
                 </Link>
                 <a
                   className="changelog"
-                  href={device.device_cglg}
+                  href={device.changelog}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

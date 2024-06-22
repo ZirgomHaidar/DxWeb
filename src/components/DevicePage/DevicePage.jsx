@@ -18,9 +18,12 @@ function DevicePage(props) {
     maintainer_name,
     codename,
     latest_release_date,
+    download,
     vendor,
     dev_chlg,
     maintainer_git,
+    maintainer_tg,
+    old_release,
   } = location.state;
   return (
     <motion.div
@@ -73,7 +76,7 @@ function DevicePage(props) {
               </a>
               <a
                 className="tg hover:scale-105 duration-100 mx-2"
-                href="#TGLINK"
+                href={maintainer_tg}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -81,7 +84,7 @@ function DevicePage(props) {
               </a>
               <a
                 className="gh hover:scale-105 duration-100"
-                href="#TGLINK"
+                href={maintainer_git}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -91,7 +94,7 @@ function DevicePage(props) {
             <div className="get-latest-build flex flex-col md:flex-row justify-center pt-12 md:pt-32 gap-3 md:gap-12">
               <a
                 className="nav-tryDx build"
-                href="#"
+                href={old_release}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -100,7 +103,7 @@ function DevicePage(props) {
               </a>
               <a
                 className="nav-tryDx build"
-                href="#"
+                href={download}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -142,7 +145,7 @@ function DevicePage(props) {
               <img src={caution} alt="" />
               <h1 className="text-4xl">Caution</h1>
             </div>
-            <h2 className="text-xl md:text-[1.7rem]">
+            <h2 className="text-xl md:text-[1.7rem] leading-[2.6rem]">
               Flashing a custom ROM can breathe new life into your phone, but
               proceed with caution: there's a risk of bricking your device if
               not done correctly. <br />{" "}
