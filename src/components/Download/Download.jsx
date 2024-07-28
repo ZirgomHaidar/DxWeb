@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./Download.css";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Loading from "../Loading/Loading";
 
 const Download = () => {
-  const [uniqueVendors, getUniqueVendors] = useState([]);
-  const [category, setCategory] = useState("All");
+  const [category, setCategory] = useState({ all: true });
+  const [activeButton, setActiveButton] = useState("all");
   const [fetchedData, setFetchedData] = useState([]);
   const [FinalDevList, setFinalDevList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -21,30 +21,35 @@ const Download = () => {
         "https://droidx-api.onrender.com/devicelist"
       );
       const data = await response.json();
-      setFetchedData(data);
+      setFetchedData(data.reverse());
       setFinalDevList(data);
-      getVendorList();
       setIsLoading(true);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
 
-  function getVendorList() {
-    const vendors = new Set(fetchedData.map((device) => device.vendor));
-    getUniqueVendors(["All", ...Array.from(vendors)]);
-  }
-
-  function selectedVendor(selected) {
-    setCategory(selected);
-    if (category !== "All") {
-      setFinalDevList(
-        fetchedData.filter((device) => device.vendor === category)
-      );
-    } else {
-      setFinalDevList(fetchedData);
-    }
-  }
+  const handleButtonSelect = useCallback(
+    (vendor) => {
+      if (vendor === "all") {
+        setFinalDevList(fetchedData);
+        setCategory({ ...category, all: true, [vendor]: false });
+        setActiveButton(vendor);
+      } else {
+        const filteredList = fetchedData.filter(
+          (item) => item.vendor === vendor
+        );
+        setFinalDevList(filteredList);
+        setActiveButton(vendor);
+        setCategory({
+          ...category,
+          all: false,
+          [vendor]: true,
+        });
+      }
+    },
+    [fetchedData]
+  );
 
   return isLoading ? (
     <motion.div
@@ -65,17 +70,25 @@ const Download = () => {
         placeholder="Search by device name or code name"
       ></input> */}
       <div className="select-vendor flex flex-wrap gap-3 justify-center">
-        {uniqueVendors.map((vendor, index) => {
-          return (
-            <div
-              key={index}
-              onClick={() => selectedVendor(vendor)}
-              className={category === vendor ? "nav-tryDx active" : "nav-tryDx"}
+        <button
+          className={activeButton === "all" ? "nav-tryDx active" : "nav-tryDx"}
+          onClick={() => handleButtonSelect("all")}
+        >
+          All
+        </button>
+        {Array.from(new Set(fetchedData.map((item) => item.vendor))).map(
+          (vendor) => (
+            <button
+              className={
+                activeButton === vendor ? "nav-tryDx active" : "nav-tryDx"
+              }
+              key={vendor}
+              onClick={() => handleButtonSelect(vendor)}
             >
               {vendor}
-            </div>
-          );
-        })}
+            </button>
+          )
+        )}
       </div>
 
       <motion.div
