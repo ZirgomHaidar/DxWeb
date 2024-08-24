@@ -126,7 +126,7 @@ const Download = () => {
                 <span>Maintainer</span> : {device.maintainer}
               </p>
               <p className="version">
-                <span>Version</span> : {device.gapps.version}
+                <span>Version</span> : {device.gapps && device.gapps.version || device.vanilla && device.vanilla.version}
               </p>
               <p className="status">
                 <span>Status</span> :{" "}
@@ -145,11 +145,11 @@ const Download = () => {
                   state={{
                     model: device.model,
                     status: device.status,
-                    version: device.gapps.version,
+                    version: device.gapps && device.gapps.version || device.vanilla && device.vanilla.version,
                     maintainer_name: device.maintainer,
                     codename: device.codename,
-                    latest_release_date: device.gapps.last_updated,
-                    download: device.gapps.download,
+                    latest_release_date: device.gapps && device.gapps.last_updated || device.vanilla && device.vanilla.version,
+                    download: device.gapps && device.gapps.download || device.vanilla && device.vanilla.version,
                     vendor: device.vendor,
                     dev_chlg: device.changelog,
                     maintainer_git: device.github,
