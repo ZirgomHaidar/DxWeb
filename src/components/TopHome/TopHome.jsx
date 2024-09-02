@@ -42,7 +42,7 @@ const TopHome = () => {
           <span className="text-[#3282b8]">DroidX-UI</span>
         </p>
         <div className="nav-tryDx mt-5 md:w-1/4">
-          <Link to="/DxWeb/Download">Try Droidx-UI</Link>
+          <Link to="/Download">Try Droidx-UI</Link>
         </div>
         <div
           className="dx-support-nums hidden md:flex mt-24 gap-56"

@@ -55,5 +55,5 @@ body::-webkit-scrollbar {
 }
 
 .nav-menu .active {
-  @apply text-[#3cb1ff] scale-105 duration-100;
+  @apply text-[#3cb1ff];
 }

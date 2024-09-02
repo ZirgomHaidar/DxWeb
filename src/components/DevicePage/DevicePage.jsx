@@ -154,7 +154,7 @@ function DevicePage(props) {
                 for any damage caused to your device.
               </span>
             </h2>
-            <Link to="/DxWeb/Help">
+            <Link to="/Help">
               <p className="learn-more flex md:justify-end mt-6 gap-5 text-xl md:text-2xl items-center duration-200 hover:scale-105">
                 Learn More <img src={arrow_black} alt="" />
               </p>

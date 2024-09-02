@@ -141,7 +141,7 @@ const Download = () => {
               <div className="dn-ch text-xl">
                 <Link
                   className="get-build hover:bg-[#adb8f0] hover:text-[#162025] duration-100"
-                  to="/DxWeb/DevicePage"
+                  to="/DevicePage"
                   state={{
                     model: device.model,
                     status: device.status,

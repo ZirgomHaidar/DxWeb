@@ -77,7 +77,7 @@ const About = () => {
           </h1>
           <p className="hidden md:flex items-center text-[#f2eba7] text-2xl gap-5">
             view all members
-            <Link to="/DxWeb/Team">
+            <Link to="/Team">
               <img src={Arrow} alt="" />
             </Link>
           </p>

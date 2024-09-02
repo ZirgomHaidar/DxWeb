@@ -24,13 +24,13 @@ function App() {
       <Suspense fallback={<Loading />}>
         <Navbar />
         <Routes>
-          <Route path="/DxWeb/" element={<Home />} />
-          <Route path="/DxWeb/Team" element={<Team />} />
-          <Route path="/DxWeb/Blog" element={<Blog />} />
-          <Route path="/DxWeb/Download" element={<Download />} />
-          <Route path="/DxWeb/About" element={<About />} />
-          <Route path="/DxWeb/Help" element={<Help />} />
-          <Route path="/DxWeb/DevicePage" element={<DevicePage />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/Team" element={<Team />} />
+          <Route path="/Blog" element={<Blog />} />
+          <Route path="/Download" element={<Download />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Help" element={<Help />} />
+          <Route path="/DevicePage" element={<DevicePage />} />
         </Routes>
         <StuckedSomewhere />
         <Footer />

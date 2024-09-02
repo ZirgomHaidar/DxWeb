@@ -42,7 +42,7 @@ const MiddleHome = () => {
               <p>{item5.desc}</p>
             </div>
             <div className="nav-tryDx hidden md:flex text-5xl m-2 mb-3 rounded-full border-[6px] border-[#72a7c4] items-center hover:scale-100">
-              <Link to="/DxWeb/Download">Try Droidx-UI</Link>
+              <Link to="/Download">Try Droidx-UI</Link>
             </div>
           </div>
         </div>

@@ -3,11 +3,10 @@ import "./Navbar.css";
 import logo from "../../assets/dxlogo_2.svg";
 import navopen from "../../assets/navopen.svg";
 import navclose from "../../assets/navclose.svg";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
-  const [menu, setMenu] = useState("home");
   const [showMore, setShowMore] = useState(false);
   const menuRef = useRef();
   const openMenu = () => {
@@ -41,11 +40,11 @@ const Navbar = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <Link to="/DxWeb/">
+      <NavLink to="/">
         <div className="h-[70px] w-[70px] md:h-[120px] md:w-[120px] flex items-center">
-          <img src={logo} alt="DX-UI" onClick={() => setMenu("home")} />
+          <img src={logo} alt="DX-UI"/>
         </div>
-      </Link>
+      </NavLink>
 
       <img
         className="navopen block md:hidden"
@@ -66,57 +65,55 @@ const Navbar = () => {
         <ul className="nav-menu flex flex-col h-fit md:flex-row items-center justify-center gap-10 mt-72 md:m-0 md:gap-20 text-xl md:pt-0 ease-in-out duration-300">
           <li
             onClick={() => {
-              setMenu("home");
               if (document.documentElement.clientWidth <= 768) closeMenu();
             }}
-            className={menu === "home" ? "active" : ""}
           >
-            <Link to="/DxWeb/">Home</Link>
+            <NavLink to="/" className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              }>Home</NavLink>
           </li>
           <li
             onClick={() => {
-              setMenu("blog");
               if (document.documentElement.clientWidth <= 768) closeMenu();
             }}
-            className={menu === "blog" ? "active" : ""}
           >
-            <Link to="/DxWeb/Blog">Blog</Link>
+            <NavLink to="/Blog" className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              }>Blog</NavLink>
           </li>
           <li
             onClick={() => {
-              setMenu("team");
               if (document.documentElement.clientWidth <= 768) closeMenu();
             }}
-            className={menu === "team" ? "active" : ""}
           >
-            <Link to="/DxWeb/Team">Team</Link>
+            <NavLink to="/Team" className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              }>Team</NavLink>
           </li>
           <li
             onClick={() => {
-              setMenu("more");
               setShowMore(true);
             }}
-            className={menu === "more" ? "text-[#3cb1ff] bg-clip-text" : ""}
           >
             <div className="cursor-pointer" ref={divRef}>
-              <p className="hover:text-[#3cb1ff]">More</p>{" "}
+              <div className={ window.location.pathname == "/About" || window.location.pathname == "/Help" ? "active" : "hover:text-[#3cb1ff]"}>More</div>
               {showMore ? (
                 <div className="dropdown absolute right-0 bottom-0 md:right-0 md:top-0 text-white">
                   <div className="dropdown-content">
-                    <Link
+                    <NavLink
                       className={
-                        window.location.pathname === "/DxWeb/About"
+                        window.location.pathname === "/About"
                           ? "p-3 text-xl hover:scale-105 duration-300 text-[#3cb1ff]"
                           : "p-3 text-xl"
                       }
-                      to="/DxWeb/About"
+                      to="/About"
                       onClick={() => {
                         if (document.documentElement.clientWidth <= 768)
                           closeMenu();
                       }}
                     >
                       About
-                    </Link>
+                    </NavLink>
                     <a
                       className="p-3 text-xl hover:scale-105 duration-300"
                       href="https://t.me/DroidXUI_walls"
@@ -133,13 +130,13 @@ const Navbar = () => {
                     >
                       Changelog
                     </a>
-                    <Link
+                    <NavLink
                       className={
-                        window.location.pathname === "/DxWeb/Help"
+                        window.location.pathname === "/Help"
                           ? "p-3 text-xl hover:scale-105 duration-300 text-[#3cb1ff]"
                           : "p-3 text-xl"
                       }
-                      to="/DxWeb/Help"
+                      to="/Help"
                       onClick={() => {
                         if (document.documentElement.clientWidth <= 768)
                           closeMenu();
@@ -147,7 +144,7 @@ const Navbar = () => {
                       }}
                     >
                       Help
-                    </Link>
+                    </NavLink>
                   </div>
                 </div>
               ) : (
@@ -157,19 +154,17 @@ const Navbar = () => {
           </li>
           <hr className="hidden md:block border-[0.5px] border-gray-500 h-10" />
           <li>
-            <Link to="/DxWeb/Download">
+            <NavLink to="/Download" className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "nav-tryDx active" : "nav-tryDx"
+              }>
               <div
                 onClick={() => {
-                  setMenu("Download");
                   if (document.documentElement.clientWidth <= 768) closeMenu();
                 }}
-                className={
-                  menu === "Download" ? "nav-tryDx active" : "nav-tryDx"
-                }
               >
                 <h4>Try Droidx-UI</h4>
               </div>
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>
