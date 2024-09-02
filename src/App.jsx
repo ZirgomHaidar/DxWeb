@@ -1,17 +1,16 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import { Suspense, lazy, useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import StuckedSomewhere from "./components/StuckedSomewhere/StuckedSomewhere";
 import Loading from "./components/Loading/Loading";
-
-const Home = lazy(() => import("./components/Home/Home"));
-const Team = lazy(() => import("./components/Team/Team"));
-const Blog = lazy(() => import("./components/Blog/Blog"));
-const Download = lazy(() => import("./components/Download/Download"));
-const About = lazy(() => import("./components/About/About"));
-const Help = lazy(() => import("./components/Help/Help"));
-const DevicePage = lazy(() => import("./components/DevicePage/DevicePage"));
+import Home from "./components/Home/Home";
+import Team from "./components/Team/Team";
+import Blog from "./components/Blog/Blog";
+import Download from "./components/Download/Download";
+import About from "./components/About/About";
+import Help from "./components/Help/Help";
+import DevicePage from "./components/DevicePage/DevicePage";
 
 function App() {
   const location = useLocation();
